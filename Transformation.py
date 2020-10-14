@@ -23,18 +23,6 @@ def city_state_country(coord):
     except:
         return "Not Found"
 
-    # if location is None:
-    #     print("Hellp")
-    # else:
-    #     print(location.raw)
-    # if not (location.raw['address'] is None):
-    #     address = location.raw['address']
-    #     city = address.get('city', '')
-    #     state = address.get('state', '')
-    #     country = address.get('country', '')
-    #     print(country)
-    # return city, state, country
-
 
 def extract_state(val):
     word = val.split(',')
