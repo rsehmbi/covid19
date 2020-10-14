@@ -3,7 +3,7 @@ import pandas as pd
 pd.set_option('display.max_rows', None)
 
 
-Individual = pd.read_csv("dataset/processed_individual_cases_Sep20th2020.csv")
+Individual = pd.read_csv("clean_cases.csv")
 Individual['age'] = Individual['age'].fillna(0)
 Grouped_Individual_Age = Individual.groupby(['country', 'province']).agg(
     {'age': 'mean'}).reset_index()
