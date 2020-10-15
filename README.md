@@ -8,7 +8,7 @@ This repository consists of the dataset to be used for the course project. The d
 * https://github.com/beoutbreakprepared/nCoV2019
 * https://github.com/CSSEGISandData/COVID-19
 
-<h3>Project Structure</h3>
+<h2>Project Structure</h2>
 |-- covid-19<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- ExploratoryDataAnalysis.ipynb<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- ExploratoryFigures<br/>
@@ -61,3 +61,45 @@ This repository consists of the dataset to be used for the course project. The d
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |-- RevisedLocationData.csv<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |-- processed_individual_cases_Sep20th2020.csv<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |-- processed_location_Sep20th2020.csv<br/>
+
+<h2>Pre-req: Third-Party Libraries Install Guide</h2>
+
+Please install the following libraries using:
+```bash
+pip3 install numpy
+pip3 install pandas
+pip3 install seaborn
+pip3 install geopy
+pip3 install seaborn
+pip3 install -U scikit-learn
+pip3 install matplotlib
+
+```
+
+<h2> Order to Run the Project </h2>
+
+1. ExploratoryDataAnalysis.ipynb <br/>
+2. DataCleaning.ipynb <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp; 2.1 - impute_province_state_date.ipynb <br/>
+3. python3 LocationDataSetImputation/ProvinceImpute.py <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp; 3.1 - LocationDataImpute.ipynb <br/>
+4. python3 LocationDataSetImputation/ImputeLatLong.py <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp; 4.1 - LocationDataImpute.ipynb <br/>
+5. python3 LocationDataSetImputation/IncidenceRate.py <br/>
+    &nbsp;&nbsp;&nbsp;&nbsp; 5.1 - LocationDataImpute.ipynb <br/>
+6. Outliers.ipynb <br/>
+7. python3 IndividualTransformation.py <br/>
+8. python3 LocationTransformation.py<br/>
+9. python3 Merge.py<br/>
+
+<h2> Additional Information </h2>
+
+1. After running ExploratoryDataAnalysis.ipynb, the figures are stored in ExploratoryFigures directory.</br>
+2. Do not run all the cells of LocationDataImpute.ipynb at once. Please follow the guidelines in .ipynb file. Since, all the files are present, if you run all the cells, you will get no error.
+3. Outliers.ipynb file contains information what the outliers are and how they are dealt.
+4. IndividualTransformation.py file transforms the final version of processed_individual_cases_Sep20th2020.csv for merging.
+5. LocationTransformation.py file transforms the final version of processed_location_Sep20th2020.csv for merging.
+6. Merge.py file merges the two dataframe on province, country attribute. 
+
+
+
