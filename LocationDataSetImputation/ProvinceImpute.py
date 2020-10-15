@@ -17,7 +17,8 @@ def state(coord):
         return np.nan
 
 
-ProcessedLocations = pd.read_csv("dataset/processed_location_Sep20th2020.csv")
+ProcessedLocations = pd.read_csv(
+    "../dataset/processed_location_Sep20th2020.csv")
 
 # If we dont have values in both Latitude and Longitude, and Province State we cannot Impute
 ProcessedLocations = ProcessedLocations.dropna(
@@ -29,8 +30,8 @@ Province_State_None = ProcessedLocations[ProcessedLocations['Province_State'].is
 )]
 
 Province_State_None.copy()
-Province_State_None['geom'] = ProcessedLocations['Long_'].map(
-    str) + ', ' + ProcessedLocations['Lat'].map(str)
+Province_State_None['geom'] = ProcessedLocations['Lat'].map(
+    str) + ', ' + ProcessedLocations['Long_'].map(str)
 Province_State_None.copy()
 
 Province_State_None['Province_State'] = Province_State_None.apply(lambda x: state(
