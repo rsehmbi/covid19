@@ -1,12 +1,13 @@
 # CMP 459 - Introduction to Data Mining - Fall 2020, SFU
+
 **Prof** - Martin Ester
 
 **TAs** - Madana Krishnan V K, Rhea Rodrigues
 
 This repository consists of the dataset to be used for the course project. The dataset revolves around the novel COVID-19 pandemic that has emerged and taken the world by storm. The first file contains the data for individual cases and the second file contains the number of cases based on location. The 2 files are obtained from an open-source repository (link below) and have been processed to make it easier to use. To ensure consistency, the dataset has been frozen to September 20th, 2020.
 
-* https://github.com/beoutbreakprepared/nCoV2019
-* https://github.com/CSSEGISandData/COVID-19
+- https://github.com/beoutbreakprepared/nCoV2019
+- https://github.com/CSSEGISandData/COVID-19
 
 <h2>Project Structure</h2>
 |-- covid-19<br/>
@@ -65,6 +66,7 @@ This repository consists of the dataset to be used for the course project. The d
 <h2>Pre-req: Third-Party Libraries Install Guide</h2>
 
 Please install the following libraries using:
+
 ```bash
 pip3 install numpy
 pip3 install pandas
@@ -72,6 +74,9 @@ pip3 install seaborn
 pip3 install geopy
 pip3 install -U scikit-learn
 pip3 install matplotlib
+pip3 install descartes
+pip3 install shapely
+pip3 install geopandas
 
 ```
 
@@ -79,13 +84,13 @@ pip3 install matplotlib
 
 1. ExploratoryDataAnalysis.ipynb <br/>
 2. DataCleaning.ipynb <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp; 2.1 - impute_province_state_date.ipynb <br/>
+   &nbsp;&nbsp;&nbsp;&nbsp; 2.1 - impute_province_state_date.ipynb <br/>
 3. python3 LocationDataSetImputation/ProvinceImpute.py <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp; 3.1 - LocationDataImpute.ipynb <br/>
+   &nbsp;&nbsp;&nbsp;&nbsp; 3.1 - LocationDataImpute.ipynb <br/>
 4. python3 LocationDataSetImputation/ImputeLatLong.py <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp; 4.1 - LocationDataImpute.ipynb <br/>
+   &nbsp;&nbsp;&nbsp;&nbsp; 4.1 - LocationDataImpute.ipynb <br/>
 5. python3 LocationDataSetImputation/IncidenceRate.py <br/>
-    &nbsp;&nbsp;&nbsp;&nbsp; 5.1 - LocationDataImpute.ipynb <br/>
+   &nbsp;&nbsp;&nbsp;&nbsp; 5.1 - LocationDataImpute.ipynb <br/>
 6. Outliers.ipynb <br/>
 7. python3 IndividualTransformation.py <br/>
 8. python3 LocationTransformation.py<br/>
@@ -98,7 +103,4 @@ pip3 install matplotlib
 3. Outliers.ipynb file contains information about the outliers and strategies to deal with them.
 4. IndividualTransformation.py file transforms the final version of processed_individual_cases_Sep20th2020.csv for merging.
 5. LocationTransformation.py file transforms the final version of processed_location_Sep20th2020.csv for merging.
-6. Merge.py file merges the two dataframe on province, country attribute. 
-
-
-
+6. Merge.py file merges the two dataframe on province, country attribute.
