@@ -88,6 +88,8 @@ pip3 install geopandas
 <h2> Order to Run the Project </h2>
 
 1. ExploratoryDataAnalysis.ipynb <br/>
+   &nbsp;&nbsp;&nbsp;&nbsp; 1.1 - python3 MakeMapLocationDataset.py <br/>
+   &nbsp;&nbsp;&nbsp;&nbsp; 1.2 - python3 MakeMapIndividualDataset.ipynb <br/>
 2. DataCleaning.ipynb <br/>
    &nbsp;&nbsp;&nbsp;&nbsp; 2.1 - impute_province_state_date.ipynb <br/>
 3. python3 LocationDataSetImputation/ProvinceImpute.py <br/>
