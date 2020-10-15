@@ -11,4 +11,4 @@ Grouped_Location_Data = LocationDataset.groupby(['Country_Region', 'Province_Sta
     {'Confirmed': 'sum', 'Deaths': 'sum', 'Recovered': 'sum', 'Active': 'sum', 'Incidence_Rate': 'mean', 'Case-Fatality_Ratio': 'mean'}).reset_index()
 Grouped_Location_Data = Grouped_Location_Data[~Grouped_Location_Data['Province_State'].str.contains(
     "Recovered")]
-print(Grouped_Location_Data)
+Grouped_Location_Data.to_csv("A.csv")
