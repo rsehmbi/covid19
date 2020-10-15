@@ -3,7 +3,7 @@ import pandas as pd
 pd.set_option('display.max_rows', None)
 
 
-Individual = pd.read_csv("clean_cases.csv")
+Individual = pd.read_csv("dataset/RevisedIndividualData.csv")
 Individual['age'] = Individual['age'].fillna(0)
 
 Individual['sex'].replace({'female': 0, 'male': 1}, inplace=True)
@@ -29,4 +29,4 @@ Grouped_Individual_Age['deceased'] = Grouped_Individual_Age['deceased'].mul(
     25 / 100)
 
 print(Grouped_Individual_Age)
-Grouped_Individual_Age.to_csv("B.csv")
+Grouped_Individual_Age.to_csv("MergeData/IndividualData.csv")

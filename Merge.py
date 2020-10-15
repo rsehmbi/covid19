@@ -1,15 +1,19 @@
 import numpy as np
 import pandas as pd
 
-A = pd.read_csv("A.csv")
-B = pd.read_csv("B.csv")
+IndividualData = pd.read_csv("MergeData/IndividualData.csv")
+LocationData = pd.read_csv("MergeData/LocationData.csv")
 
 
-A = A.rename(columns={'Province_State': 'province',
-                      'Country_Region': 'country'})
+LocationData = LocationData.rename(columns={'Province_State': 'province',
+                                            'Country_Region': 'country'})
 
 cols = ['province', 'country']
-C = A.merge(B, on=['country', 'province'], how='outer')
-D = A.merge(B, on=['country', 'province'], how='inner')
-print(C)
-print(D.columns)
+OuterJoin = IndividualData.merge(
+    LocationData, on=['country', 'province'], how='outer')
+InnerJoin = IndividualData.merge(
+    LocationData, on=['country', 'province'], how='inner')
+
+InnerJoin.to_csv("MergeData/CombinedData.csv")
+print(OuterJoin)
+print(InnerJoin)
