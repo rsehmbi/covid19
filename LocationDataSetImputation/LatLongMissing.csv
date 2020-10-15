@@ -1,0 +1,71 @@
+,Province_State,Country_Region,Last_Update,Lat,Long_,Confirmed,Deaths,Recovered,Active,Combined_Key,Incidence_Rate,Case-Fatality_Ratio
+67,Diamond Princess,Canada,2020-09-20 04:22:56,,,0,1,0,,"Diamond Princess, Canada",,
+68,Grand Princess,Canada,2020-09-20 04:22:56,,,13,0,13,0.0,"Grand Princess, Canada",,0.0
+330,Port Quarantine,Japan,2020-09-20 04:22:56,,,887,1,514,372.0,"Port Quarantine, Japan",,0.11273957158962795
+683,Alabama,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Out of AL, Alabama, US",,
+695,Alabama,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Alabama, US",,
+722,Alaska,US,2020-09-20 04:22:56,,,1,0,0,1.0,"Unassigned, Alaska, US",,0.0
+740,Arizona,US,2020-09-20 04:22:56,,,4,2,0,2.0,"Unassigned, Arizona, US",,50.0
+812,Arkansas,US,2020-09-20 04:22:56,,,1649,0,0,1649.0,"Unassigned, Arkansas, US",,0.0
+874,California,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, California, US",,
+925,Colorado,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Out of CO, Colorado, US",,
+940,Colorado,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Colorado, US",,
+951,Connecticut,US,2020-09-20 04:22:56,,,121,0,0,121.0,"Unassigned, Connecticut, US",,0.0
+956,Delaware,US,2020-09-20 04:22:56,,,476,0,0,476.0,"Unassigned, Delaware, US",,0.0
+957,Diamond Princess,US,2020-08-04 02:27:56,,,49,0,0,49.0,"Diamond Princess, US",,0.0
+1021,Florida,US,2020-09-20 04:22:56,,,1592,0,0,1592.0,"Unassigned, Florida, US",,0.0
+1136,Georgia,US,2020-09-20 04:22:56,,,16962,149,0,16813.0,"Out of GA, Georgia, US",,0.8784341469166372
+1171,Georgia,US,2020-09-20 04:22:56,,,2399,5,0,2394.0,"Unassigned, Georgia, US",,0.20842017507294705
+1188,Grand Princess,US,2020-08-04 02:27:56,,,103,3,0,100.0,"Grand Princess, US",,2.912621359223301
+1194,Hawaii,US,2020-09-20 04:22:56,,,28,1,0,27.0,"Out of HI, Hawaii, US",,3.571428571428572
+1195,Hawaii,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Hawaii, US",,
+1238,Idaho,US,2020-09-20 04:22:56,,,3,0,0,3.0,"Unassigned, Idaho, US",,0.0
+1312,Illinois,US,2020-09-20 04:22:56,,,2,0,0,2.0,"Out of IL, Illinois, US",,0.0
+1332,Illinois,US,2020-09-20 04:22:56,,,2241,236,0,2005.0,"Unassigned, Illinois, US",,10.531012940651497
+1425,Indiana,US,2020-09-20 04:22:56,,,0,225,0,-225.0,"Unassigned, Indiana, US",,
+1525,Iowa,US,2020-09-20 04:22:56,,,23,0,0,4.0,"Unassigned, Iowa, US",,0.0
+1636,Kansas,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Kansas, US",,
+1756,Kentucky,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Kentucky, US",,
+1802,Louisiana,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Out of LA, Louisiana, US",,
+1821,Louisiana,US,2020-09-20 04:22:56,,,190,170,0,20.0,"Unassigned, Louisiana, US",,89.47368421052632
+1839,Maine,US,2020-08-07 22:34:20,,,0,0,0,0.0,"Out of ME, Maine, US",,
+1845,Maine,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Maine, US",,
+1870,Maryland,US,2020-09-20 04:22:56,,,0,11,0,-11.0,"Unassigned, Maryland, US",,
+1886,Massachusetts,US,2020-09-20 04:22:56,,,2384,5,0,2379.0,"Unassigned, Massachusetts, US",,0.20973154362416108
+1912,Michigan,US,2020-09-20 04:22:56,,,195,5,0,190.0,"Federal Correctional Institution (FCI), Michigan, US",,2.5641025641025643
+1944,Michigan,US,2020-09-20 04:22:56,,,5563,73,0,5490.0,"Michigan Department of Corrections (MDOC), Michigan, US",,1.3122415962610103
+1960,Michigan,US,2020-09-20 04:22:56,,,204,2,0,202.0,"Out of MI, Michigan, US",,0.9803921568627452
+1970,Michigan,US,2020-09-20 04:22:56,,,4,0,0,4.0,"Unassigned, Michigan, US",,0.0
+2053,Minnesota,US,2020-09-20 04:22:56,,,187,52,0,135.0,"Unassigned, Minnesota, US",,27.807486631016044
+2135,Mississippi,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Mississippi, US",,
+2255,Missouri,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Missouri, US",,
+2315,Montana,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Montana, US",,
+2407,Nebraska,US,2020-09-20 04:22:56,,,194,0,0,194.0,"Unassigned, Nebraska, US",,0.0
+2429,Nevada,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Nevada, US",,
+2442,New Hampshire,US,2020-09-20 04:22:56,,,3,0,0,3.0,"Unassigned, New Hampshire, US",,0.0
+2462,New Jersey,US,2020-09-20 04:22:56,,,316,0,0,316.0,"Unassigned, New Jersey, US",,0.0
+2496,New Mexico,US,2020-09-20 04:22:56,,,1361,0,0,1361.0,"Unassigned, New Mexico, US",,0.0
+2555,New York,US,2020-09-20 04:22:56,,,0,16,0,-16.0,"Unassigned, New York, US",,
+2651,North Carolina,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, North Carolina, US",,
+2712,North Dakota,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, North Dakota, US",,
+2797,Ohio,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Ohio, US",,
+2865,Oklahoma,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Out of OK, Oklahoma, US",,
+2880,Oklahoma,US,2020-09-20 04:22:56,,,70,0,0,70.0,"Unassigned, Oklahoma, US",,0.0
+2916,Oregon,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Oregon, US",,
+2982,Pennsylvania,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Pennsylvania, US",,
+3046,Puerto Rico,US,2020-09-20 04:22:56,,,777,0,0,777.0,"Out of PR, Puerto Rico, US",,0.0
+3063,Puerto Rico,US,2020-09-20 04:22:56,,,556,605,0,-49.0,"Unassigned, Puerto Rico, US",,108.81294964028775
+3071,Recovered,US,2020-09-20 04:22:56,,,0,0,2577446,-2577446.0,"Recovered, US",,
+3076,Rhode Island,US,2020-09-20 04:22:56,,,2246,1088,0,1158.0,"Unassigned, Rhode Island, US",,48.44167408726626
+3121,South Carolina,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, South Carolina, US",,
+3187,South Dakota,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, South Dakota, US",,
+3258,Tennessee,US,2020-09-20 04:22:56,,,2811,23,0,2788.0,"Out of TN, Tennessee, US",,0.8182141586623978
+3278,Tennessee,US,2020-09-20 04:22:56,,,2803,6,0,2797.0,"Unassigned, Tennessee, US",,0.21405636817695325
+3518,Texas,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Texas, US",,
+3554,Utah,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Utah, US",,
+3569,Vermont,US,2020-09-20 04:22:56,,,8,0,0,8.0,"Unassigned, Vermont, US",,0.0
+3697,Virginia,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Virginia, US",,
+3742,Washington,US,2020-09-20 04:22:56,,,292,5,0,287.0,"Unassigned, Washington, US",,1.7123287671232876
+3796,West Virginia,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, West Virginia, US",,
+3866,Wisconsin,US,2020-09-20 04:22:56,,,0,0,0,0.0,"Unassigned, Wisconsin, US",,
+3898,Wyoming,US,2020-09-20 04:22:56,,,1,0,0,0.0,"Unassigned, Wyoming, US",,0.0
