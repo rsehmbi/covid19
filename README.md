@@ -55,6 +55,11 @@ This repository consists of the dataset to be used for the course project. The d
 |-- Outliers.ipynb<br/>
 |-- README.md<br/>
 |-- dataset<br/>
+|-- MakeMapLocationDataset.py<br/>
+|-- MakeMapIndividualDataset.py<br/>
+|-- Maps<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |-- IndividualLatitudeLongitude.png<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |-- LocationLatitudeLongitude.png<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |-- CleanedIndividualCases.csv<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |-- CleanedLocations.csv<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |-- OutlierIndex.csv<br/>
