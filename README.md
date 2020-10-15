@@ -95,7 +95,7 @@ pip3 install matplotlib
 
 1. After running ExploratoryDataAnalysis.ipynb, the figures are stored in ExploratoryFigures directory.</br>
 2. Do not run all the cells of LocationDataImpute.ipynb at once. Please follow the guidelines in .ipynb file. Since, all the files are present, if you run all the cells, you will get no error.
-3. Outliers.ipynb file contains information what the outliers are and how they are dealt.
+3. Outliers.ipynb file contains information about the outliers and strategies to deal with them.
 4. IndividualTransformation.py file transforms the final version of processed_individual_cases_Sep20th2020.csv for merging.
 5. LocationTransformation.py file transforms the final version of processed_location_Sep20th2020.csv for merging.
 6. Merge.py file merges the two dataframe on province, country attribute. 
