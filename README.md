@@ -38,6 +38,8 @@ This repository consists of the dataset to be used for the course project. The d
 |-- IndividualTransformation.py<br/>
 |-- LocationDataImpute.ipynb<br/>
 |-- LocationDataSetImputation<br/>
+|-- DataCleaning.ipynb<br/>
+|-- Impute_province_state_data.ipynb<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |-- ImputeLatLong.py<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |-- ImputedIncidenceRate.csv<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   |-- ImputedLongLat.csv<br/>
