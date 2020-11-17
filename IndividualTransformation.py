@@ -1,7 +1,5 @@
 import numpy as np
 import pandas as pd
-pd.set_option('display.max_rows', None)
-
 
 Individual = pd.read_csv("dataset/RevisedIndividualData.csv")
 Individual['age'] = Individual['age'].fillna(0)
@@ -16,17 +14,17 @@ Individual['NonHospitalizations'] = Individual['outcome'].replace(
 Individual['deceased'] = Individual['outcome'].replace(
     {'deceased': 1, 'hospitalized': 0, 'nonhospitalized': 0, 'recovered': 0})
 
-Grouped_Individual_Age = Individual.groupby(['country', 'province']).agg(
-    {'age': 'mean', 'sex': 'mean', 'RecoveryRate': 'mean', 'Hospitalizations': 'mean', 'NonHospitalizations': 'mean', 'deceased': 'mean'}).reset_index()
+# Grouped_Individual_Age = Individual.groupby(['country', 'province']).agg(
+#     {'age': 'mean', 'sex': 'mean', 'RecoveryRate': 'mean', 'Hospitalizations': 'mean', 'NonHospitalizations': 'mean', 'deceased': 'mean'}).reset_index()
 
-Grouped_Individual_Age['RecoveryRate'] = Grouped_Individual_Age['RecoveryRate'].mul(
+Individual['RecoveryRate'] = Individual['RecoveryRate'].mul(
     25 / 100)
-Grouped_Individual_Age['Hospitalizations'] = Grouped_Individual_Age['Hospitalizations'].mul(
+Individual['Hospitalizations'] = Individual['Hospitalizations'].mul(
     .25)
-Grouped_Individual_Age['NonHospitalizations'] = Grouped_Individual_Age['NonHospitalizations'].mul(
+Individual['NonHospitalizations'] = Individual['NonHospitalizations'].mul(
     .25)
-Grouped_Individual_Age['deceased'] = Grouped_Individual_Age['deceased'].mul(
+Individual['deceased'] = Individual['deceased'].mul(
     25 / 100)
 
-print(Grouped_Individual_Age)
-Grouped_Individual_Age.to_csv("MergeData/IndividualData.csv")
+print(Individual)
+Individual.to_csv("MergeData/IndividualData.csv")
