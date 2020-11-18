@@ -4,6 +4,8 @@ import pickle
 from joblib import dump, load
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import classification_report
 
 
 def LoadTrainingData():
@@ -36,10 +38,21 @@ def Evaluation():
     X_train, y_train = LoadTrainingData()
     X_test, y_test = LoadTestData()
 
+    # Metric 1: Validation Scores
     print("Training Score " +
           str(kNN.score(X_train, y_train)))
     print("Validation Score" +
           str(kNN.score(X_test, y_test)))
+
+    # Metric 2: Confusion Matrix
+    predicted = kNN.predict(X_test)
+    matrix = confusion_matrix(y_test, predicted)
+    print("The Confusion Matrix for the prediction is")
+    print(matrix)
+
+    # Metric 3: Classification Report
+    report = classification_report(y_test, predicted)
+    print(report)
 
 
 def KNN2():
