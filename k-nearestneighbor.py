@@ -8,6 +8,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import confusion_matrix
 from sklearn.model_selection import learning_curve
 from sklearn.metrics import classification_report
+import seaborn as sns
 
 
 def LoadTrainingData():
@@ -48,9 +49,15 @@ def Evaluation():
 
     # Metric 2: Confusion Matrix
     predicted = kNN.predict(X_test)
+    labels = ['True deceased', 'Negative', 'Negative', 'Negative', 'Negative', 'True hospitalized',
+              'Negative', 'Negative', 'Negative', 'Negative', ' True nonhospitalized', 'Negative', 'Negative', 'Negative', 'Negative', 'True recovered']
+    labels = np.asarray(labels).reshape(4, 4)
     matrix = confusion_matrix(y_test, predicted)
+
     print("The Confusion Matrix for the prediction is")
     print(matrix)
+    fig = sns.heatmap(matrix, annot=labels, fmt='', cmap='Blues', cbar=False)
+    fig.figure.savefig("output.png")
 
     # Metric 3: Classification Report
     report = classification_report(y_test, predicted)
@@ -123,10 +130,10 @@ def LearningCurve():
 
 
 def main():
-    BuildingkNNModel()
+    # BuildingkNNModel()
     Evaluation()
-    Overfitting()
-    LearningCurve()
+    # Overfitting()
+    # LearningCurve()
 
 
 if __name__ == "__main__":
