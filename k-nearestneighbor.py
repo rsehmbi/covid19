@@ -2,9 +2,11 @@ import pandas as pd
 import numpy as np
 import pickle
 from joblib import dump, load
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, cross_val_score
+import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import confusion_matrix
+from sklearn.model_selection import learning_curve
 from sklearn.metrics import classification_report
 
 
@@ -28,7 +30,7 @@ def LoadTestData():
 
 def BuildingkNNModel():
     X_train, y_train = LoadTrainingData()
-    neigh = KNeighborsClassifier(n_neighbors=3, metric='manhattan')
+    neigh = KNeighborsClassifier(n_neighbors=3, metric='minkowski')
     neigh.fit(X_train, y_train)
     dump(neigh, 'kNNwithManhattan.joblib')
 
@@ -55,55 +57,76 @@ def Evaluation():
     print(report)
 
 
-def KNN2():
-    trainingdata = pd.read_csv("TrainTestData/TrainingData.csv")
-    testdata = pd.read_csv("TrainTestData/TestData.csv")
+def Overfitting():
+    kValues = [i for i in range(1, 100, 2)]
 
-    y_train = trainingdata["outcome"].values
-    trainingdata = trainingdata[["age", "sex", "latitude", "longitude",
-                                 "Confirmed", "Deaths", "Recovered", "Active", "Incidence_Rate", "Case-Fatality_Ratio"]]
-    X_train = trainingdata.values
+    print(kValues)
+    Accuracy = []
 
-    y_test = testdata["outcome"].values
-    testdata = testdata[["age", "sex", "latitude", "longitude",
-                         "Confirmed", "Deaths", "Recovered", "Active", "Incidence_Rate", "Case-Fatality_Ratio"]]
-    X_test = testdata.values
+    X_train, y_train = LoadTrainingData()
 
-    neigh = KNeighborsClassifier(n_neighbors=3, metric='minkowski')
-    neigh.fit(X_train, y_train)
-    print("Score with training " +
-          str(neigh.score(X_train, y_train)))
-    print("Score with validation " +
-          str(neigh.score(X_test, y_test)))
+    for k in kValues:
+        knn = KNeighborsClassifier(n_neighbors=k, metric='minkowski')
+        CrossValidationScore = cross_val_score(
+            knn, X_train, y_train, cv=5, n_jobs=-1, scoring='accuracy')
+        Accuracy.append(CrossValidationScore.mean())
+
+    kOptimal = kValues[Accuracy.index(max(Accuracy))]
+    print(Accuracy)
+    print("Optimal k", kOptimal)
+    plt.plot(kValues, Accuracy)
+    plt.xlabel("K Values")
+    plt.ylabel(" Accuracy")
+    plt.savefig('kValuesVSAccuracy.png')
 
 
-def kNN3():
-    trainingdata = pd.read_csv("TrainTestData/TrainingData.csv")
-    testdata = pd.read_csv("TrainTestData/TestData.csv")
+def LearningCurve():
+    X, y = LoadTrainingData()
+    train_sizes, train_scores, test_scores = learning_curve(KNeighborsClassifier(),
+                                                            X,
+                                                            y,
+                                                            # Number of folds in cross-validation
+                                                            cv=10,
+                                                            # Evaluation metric
+                                                            scoring='accuracy',
+                                                            # Use all computer cores
+                                                            n_jobs=-1,
+                                                            # 20 different sizes of the training set
+                                                            train_sizes=np.linspace(0.01, 1.0, 50))
 
-    y_train = trainingdata["outcome"].values
-    trainingdata = trainingdata[["age", "sex", "latitude", "longitude",
-                                 "Confirmed", "Deaths", "Recovered", "Active", "Incidence_Rate", "Case-Fatality_Ratio"]]
-    X_train = trainingdata.values
+    # Create means and standard deviations of training set scores
+    train_mean = np.mean(train_scores, axis=1)
+    train_std = np.std(train_scores, axis=1)
 
-    y_test = testdata["outcome"].values
-    testdata = testdata[["age", "sex", "latitude", "longitude",
-                         "Confirmed", "Deaths", "Recovered", "Active", "Incidence_Rate", "Case-Fatality_Ratio"]]
-    X_test = testdata.values
+    # Create means and standard deviations of test set scores
+    test_mean = np.mean(test_scores, axis=1)
+    test_std = np.std(test_scores, axis=1)
 
-    neigh = KNeighborsClassifier(n_neighbors=4, metric='euclidean')
-    neigh.fit(X_train, y_train)
-    print("Score with training " +
-          str(neigh.score(X_train, y_train)))
-    print("Score with validation " +
-          str(neigh.score(X_test, y_test)))
+    # Draw lines
+    plt.plot(train_sizes, train_mean, '--',
+             color="#111111",  label="Training score")
+    plt.plot(train_sizes, test_mean, color="#111111",
+             label="Cross-validation score")
+
+    # Draw bands
+    plt.fill_between(train_sizes, train_mean - train_std,
+                     train_mean + train_std, color="#DDDDDD")
+    plt.fill_between(train_sizes, test_mean - test_std,
+                     test_mean + test_std, color="#DDDDDD")
+
+    # Create plot
+    plt.title("Learning Curve")
+    plt.xlabel("Training Set Size"), plt.ylabel(
+        "Accuracy Score"), plt.legend(loc="best")
+    plt.tight_layout()
+    plt.savefig('kNNLearningCurve.png')
 
 
 def main():
     BuildingkNNModel()
     Evaluation()
-    # KNN2()
-    # kNN3()
+    Overfitting()
+    LearningCurve()
 
 
 if __name__ == "__main__":
