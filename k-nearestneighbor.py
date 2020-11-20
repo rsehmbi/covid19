@@ -57,7 +57,9 @@ def Evaluation():
     print("The Confusion Matrix for the prediction is")
     print(matrix)
     fig = sns.heatmap(matrix, annot=labels, fmt='', cmap='Blues', cbar=False)
-    fig.figure.savefig("output.png")
+    plt.xlabel("True classes")
+    plt.ylabel("Predicted Classes")
+    fig.figure.savefig("kNNConfusionMatrix.png")
 
     # Metric 3: Classification Report
     report = classification_report(y_test, predicted)
@@ -65,7 +67,7 @@ def Evaluation():
 
 
 def Overfitting():
-    kValues = [i for i in range(1, 100, 2)]
+    kValues = [i for i in range(1, 50, 2)]
 
     print(kValues)
     Accuracy = []
@@ -81,6 +83,7 @@ def Overfitting():
     kOptimal = kValues[Accuracy.index(max(Accuracy))]
     print(Accuracy)
     print("Optimal k", kOptimal)
+    plt.clf()
     plt.plot(kValues, Accuracy)
     plt.xlabel("K Values")
     plt.ylabel(" Accuracy")
@@ -130,10 +133,10 @@ def LearningCurve():
 
 
 def main():
-    # BuildingkNNModel()
+    BuildingkNNModel()
     Evaluation()
-    # Overfitting()
-    # LearningCurve()
+    Overfitting()
+    LearningCurve()
 
 
 if __name__ == "__main__":
