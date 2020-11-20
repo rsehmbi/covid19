@@ -16,7 +16,7 @@ def train_test_split(df):
 
 
 def main():
-    df = pd.read_csv("MergeData/CombinedData.csv")
+    df = pd.read_csv("dataset/CombinedData.csv")
     train, test = train_test_split(df)
     train.to_csv("TrainTestData/TrainingData.csv")
     test.to_csv("TrainTestData/TestData.csv")
