@@ -9,6 +9,8 @@ This repository consists of the dataset to be used for the course project. The d
 - https://github.com/beoutbreakprepared/nCoV2019
 - https://github.com/CSSEGISandData/COVID-19
 
+# MileStone 1
+
 <h2>Project Structure</h2>
 |-- covid-19<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- ExploratoryDataAnalysis.ipynb<br/>
@@ -114,3 +116,36 @@ pip3 install countryinfo
 4. IndividualTransformation.py file transforms the final version of processed_individual_cases_Sep20th2020.csv for merging.
 5. LocationTransformation.py file transforms the final version of processed_location_Sep20th2020.csv for merging.
 6. Merge.py file merges the two dataframe on province, country attribute.
+
+
+# MileStone 2
+<h2>Updated Structure</h2>
+|-- covid-19<br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- dataset/CombinedData.csv <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- TrainTestData/TrainingData.csv <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- TrainTestData/TestData.csv <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- src/k-nearestneighbour.py <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- src/TrainTestModel.py <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- src/adaboostmodel.py <br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- plots/kNNConfusionMatrix.png <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- plots/kNNLearningCurve.png <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- plots/kValuesVSAccuracy.png <br/>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- plots/AdaboostLearningCurve.png <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- plots/AdaboostConfusionMatrix.png <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- plots/confusionmatrix.png <br/>
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- models/kNNwithMinkowski.joblib <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- models/RandomForest.joblib <br/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|-- models/AdaboostedModel.joblib <br/>
+
+<h2> Order to Run the Project </h2>
+1. python3 TrainTestModel.py to generate the Test and Training data. <br/>
+2. python3 k-nearestneighbour.py to generate plots and store model in models folder. <br/>
+3. python3 adaboostmodel.py to generate plots and store model in models folder. <br/>
+4. Run the model_3.ipynb to generate plots and store RandomForest model.
+
+<h2> Additional Information </h2>
+1. Please note it might take around 30-45 minutes to run adaboost and kNN model files to run. Please let the program run to generate all the files.
