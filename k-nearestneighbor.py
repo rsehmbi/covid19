@@ -33,7 +33,7 @@ def BuildingkNNModel():
     X_train, y_train = LoadTrainingData()
     neigh = KNeighborsClassifier(n_neighbors=3, metric='minkowski')
     neigh.fit(X_train, y_train)
-    dump(neigh, 'kNNwithManhattan.joblib')
+    dump(neigh, '../Models/kNNwithMinkowski.joblib')
 
 
 def Evaluation():
@@ -134,9 +134,9 @@ def LearningCurve():
 
 def main():
     BuildingkNNModel()
-    Evaluation()
-    Overfitting()
-    LearningCurve()
+    # Evaluation()
+    # Overfitting()
+    # LearningCurve()
 
 
 if __name__ == "__main__":
