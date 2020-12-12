@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from sklearn.metrics import recall_score, make_scorer
+from sklearn.metrics import recall_score, make_scorer, precision_score, accuracy_score
 from sklearn.model_selection import GridSearchCV
 from sklearn.neighbors import KNeighborsClassifier
 
@@ -30,25 +30,38 @@ def Tuning():
     Classifier = KNeighborsClassifier(n_jobs=-1)
 
     grid_params = {
-        'n_neighbors': [3],
-        'weights': ['distance'],
-        'metric': ['manhattan']
+        'n_neighbors': [3, 4, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100],
+        'weights': ['distance', 'uniform'],
+        'metric': ['manhattan', 'euclidean', 'minkowski']
     }
 
-    scorers = {
-        'recall_score': make_scorer(recall_score)
+    scoring = {
+        'Accuracy': make_scorer(accuracy_score),
+        'recall_score': make_scorer(recall_score, average='macro')
     }
-
-    refit_score = 'recall_score'
 
     clf = GridSearchCV(
         Classifier,
         grid_params,
+        scoring=scoring,
+        refit='Accuracy', return_train_score=True,
+        cv=5
     )
 
     clf.fit(X_train, y_train)
     y_pred = clf.predict(X_test)
-    print(recall_score(y_test, y_pred, average=None))
+    df = pd.DataFrame(clf.cv_results_)
+    print("The best parameter are", clf.best_params_)
+    df = df[['param_n_neighbors', 'param_weights', 'param_metric',
+             'mean_train_Accuracy', 'mean_train_recall_score']]
+
+    df.to_csv("../dataset/TuningkNN.csv")
+
+    BestParameters = pd.DataFrame([clf.best_params_])
+    BestParameters.to_csv("../dataset/BestParameters.csv")
+
+    # print(recall_score(y_test, y_pred, average=None,
+    #                    labels=["deceased", "hospitalized", "nonhospitalized", "recovered"]))
 
 
 def main():
