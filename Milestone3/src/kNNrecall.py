@@ -14,7 +14,6 @@ def LoadTrainingData():
 
 
 def calculate_recall(n_nneighbors, nmetric, nweights):
-    df = pd.read_csv("../dataset/demo.csv")
     KNN = KNeighborsClassifier(
         n_neighbors=n_nneighbors, weights=nweights, metric=nmetric)
 
@@ -25,20 +24,15 @@ def calculate_recall(n_nneighbors, nmetric, nweights):
     deceased, hospitalized, nonhospitalized, recovered = recall_score(
         y_train, y_pred, average=None, labels=["deceased", "hospitalized", "nonhospitalized", "recovered"])
 
-    df['recall_deceased'] = deceased
-    df['recall_hospitalized'] = hospitalized
-    df['recall_nonhospitalized'] = nonhospitalized
-    df['recall_recovered'] = recovered
-
-    df.to_csv("../dataset/AccuracyRecallRecallDeceasedKNN.csv")
-
-    return deceased
+    return [deceased, hospitalized, nonhospitalized, recovered]
 
 
 def Recall():
     df = pd.read_csv("../dataset/TuningkNN.csv")
-    df = df.apply(
-        lambda x: calculate_recall(x.param_n_neighbors, x.param_metric, x.param_weights), axis=1)
+    df[['recall_deceased', 'recall_hospitalized', 'recall_nonhospitalized', 'recall_recovered']] = df.apply(
+        lambda x: pd.Series(calculate_recall(x.param_n_neighbors, x.param_metric, x.param_weights)), axis=1)
+
+    df.to_csv("../dataset/AccuracyRecallRecallDeceasedKNN.csv")
 
 
 def main():
