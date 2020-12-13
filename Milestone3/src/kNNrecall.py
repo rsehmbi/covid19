@@ -28,11 +28,11 @@ def calculate_recall(n_nneighbors, nmetric, nweights):
 
 
 def Recall():
-    df = pd.read_csv("../dataset/TuningkNN.csv")
+    df = pd.read_csv("../results/TuningkNN.csv")
     df[['recall_deceased', 'recall_hospitalized', 'recall_nonhospitalized', 'recall_recovered']] = df.apply(
         lambda x: pd.Series(calculate_recall(x.param_n_neighbors, x.param_metric, x.param_weights)), axis=1)
 
-    df.to_csv("../dataset/AccuracyRecallRecallDeceasedKNN.csv")
+    df.to_csv("../results/AccuracyRecallRecallDeceasedKNN.csv")
 
 
 def main():

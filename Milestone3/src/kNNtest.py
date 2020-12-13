@@ -46,13 +46,13 @@ def findNlargestRecall(df):
 
 
 def main():
-    ARRD = pd.read_csv("../dataset/AccuracyRecallRecallDeceasedKNN.csv")
+    ARRD = pd.read_csv("../results/AccuracyRecallRecallDeceasedKNN.csv")
     ndf = findNlargestRecall(ARRD)
 
     ndf = ndf.apply(lambda x: pd.Series(print_classification_report(
         x.param_n_neighbors, x.param_metric, x.param_weights)), axis=1)
 
-    ndf.to_csv("../dataset/ClassificationReport_kNN.csv")
+    ndf.to_csv("../results/ClassificationReport_kNN.csv")
 
 
 if __name__ == "__main__":
