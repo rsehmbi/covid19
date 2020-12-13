@@ -49,9 +49,10 @@ def Tuning():
     )
 
     clf.fit(X_train, y_train)
-    y_pred = clf.predict(X_test)
+    # y_pred = clf.predict(X_test)
     df = pd.DataFrame(clf.cv_results_)
     print("The best parameter are", clf.best_params_)
+    print(df.columns)
     df = df[['param_n_neighbors', 'param_weights', 'param_metric',
              'mean_train_Accuracy', 'mean_train_recall_score']]
 
