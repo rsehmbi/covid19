@@ -53,10 +53,10 @@ def Tuning():
     print("The best parameters are", clf.best_params_)
     print(df.columns)
     df = df[['param_n_estimators', 'param_learning_rate', 'mean_train_Accuracy', 'mean_train_recall_score']]
-    df.to_csv("../dataset/TuningDecisionTree.csv")
+    df.to_csv("../results/TuningDecisionTree.csv")
 
     BestParameters = pd.DataFrame([clf.best_params_])
-    BestParameters.to_csv("../dataset/BestParameters_DT.csv")
+    BestParameters.to_csv("../results/BestParameters_DT.csv")
     
-    
+
 Tuning()

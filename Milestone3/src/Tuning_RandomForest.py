@@ -25,7 +25,6 @@ def LoadTestData():
 def Tuning():
     X_train, y_train = LoadTrainingData()
     X_test, y_test = LoadTestData()
-    # print(X_train.shape, y_train.shape)
 
     classifier = RandomForestClassifier(n_jobs = -1)
 
@@ -51,17 +50,14 @@ def Tuning():
     )
 
     clf.fit(X_train, y_train)
-    # y_pred = clf.predict(X_test)
     df = pd.DataFrame(clf.cv_results_)
     print("The best parameters are", clf.best_params_)
     print(df.columns)
     df = df[['param_n_estimators', 'param_criterion', 'param_max_depth', 'mean_train_Accuracy', 'mean_train_recall_score']]
-    df.to_csv("../dataset/TuningRandomForest.csv")
+    df.to_csv("../results/TuningRandomForest.csv")
 
     BestParameters = pd.DataFrame([clf.best_params_])
-    BestParameters.to_csv("../dataset/BestParameters_RF.csv")
-    # print(recall_score(y_test, y_pred, average=None))
-    # print(recall_score(y_test, y_pred, average=None, labels = ["deceased", "hospitalized", "nonhospitalized", "recovered"]))
-
+    BestParameters.to_csv("../results/BestParameters_RF.csv")
+    
 
 Tuning()
